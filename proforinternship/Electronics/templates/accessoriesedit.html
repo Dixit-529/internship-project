@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Internship Project</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+</head>
+<style>
+    .allitem {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        background-color: rgb(163, 157, 148);
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+    .item-title {
+        margin-left: 2rem;
+    }
+
+    .mobiles-item {
+        display: flex;
+        flex-direction: row;
+        gap: 1rem;
+        width: 100vw;
+        /* flex-wrap: nowrap; */
+        overflow: scroll;
+    }
+
+    .card:hover {
+        background-color: black;
+        color: white;
+    }
+
+    .laptops-item {
+        display: flex;
+        flex-direction: row;
+        gap: 1rem;
+        width: 100vw;
+        flex-wrap: nowrap;
+        overflow: scroll;
+    }
+
+    .accessories-item {
+        display: flex;
+        flex-direction: row;
+        gap: 1rem;
+        width: 100vw;
+        flex-wrap: nowrap;
+        overflow: scroll;
+    }
+
+    .footer {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: black;
+        position: relative;
+        margin-bottom: 0.5rem;
+        color: white;
+        width: 100%;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+    }
+    .edit-form{
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        padding: 2rem;
+        background-color: wheat;
+        color: white;
+    }
+    .input-tag{
+        width: 100%;
+    }
+</style>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Electronics</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll"
+                aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarScroll">
+                <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="{% url 'Home' %}">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'Contact' %}">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'About' %}">About-Us</a>
+                    </li>
+                </ul>
+                <form class="d-flex" role="search" method="GET">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"
+                        name="search">
+                    <button class="btn btn-outline-primary" type="submit">Search</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+        crossorigin="anonymous"></script>
+    <div class="edit-form">
+        <form action="POST">
+            <label for="brand_name">Brand Name : </label>
+            <input type="text" placeholder="enter the brand name" name="brand_name" class="input-tag"><br>
+            <label for="product name">product Name : </label>
+            <input type="text" placeholder="enter the product name" name="product_name" class="input-tag"><br>
+            <label for="Price">Price : </label>
+            <input type="text" placeholder="enter the price" name="price" class="input-tag"><br>
+            <label for="Specification">Specification : </label>
+            <textarea name="specification" class="input-tag"></textarea><br>
+            <label for="Image">Product Image : </label>
+            <input type="file" placeholder="Upload the product image" name="img" class="input-tag"><br>
+            <label for="Review">Review : </label>
+            <textarea name="review" class="input-tag"></textarea><br>
+            <input type="button" value="submit">
+        </form>
+    </div> 
+    <div class="footer">
+        <div class="footer-in">
+            <footer>COPYRIGHT @2022</footer>
+        </div>
+        <div class="footer-in">
+            <footer>Reserved by:</footer>
+        </div>
+        <div class="footer-in">
+            <footer>Dixit Gondaliya</footer>
+        </div>
+    </div>
+</body>
+
+</html>
