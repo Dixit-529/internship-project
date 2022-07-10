@@ -1,0 +1,87 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+  <div class="allitem">
+    <div class="item-title">
+      <h2>Mobiles</h2>
+    </div>
+    <div class="mobiles-item">
+      {% for i in M %}
+      <div class="card" style="width: 18rem;">
+        {% if i.img %}
+        <img src="{{ i.img.url }}" class="card-img-top" alt="...">
+        {% endif %}
+        <div class="card-body">
+          <p class="card-title">{{ i.name }}</p>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">{{ i.brand_name }}</li>
+          <li class="list-group-item">{{ i.price }} Rs</li>
+        </ul>
+        <div class="card-body">
+          <a href="{% url 'mobile' i.id %}" class="card-link">View Product</a>
+        </div>
+        <div class="card-body">
+          <a href="{% url 'delete' i.id %}" class="card-link">Delete Product</a>
+        </div>
+        <div class="card-body">
+          <a href="{% url 'Update' catagory=i.catagory abc=i.id  %}" class="card-link">Update Product</a>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+    <hr>
+    <hr>
+    <div class="item-title">
+      <h2>Laptops</h2>
+    </div>
+    <div class="laptops-item">
+      {% for j in L %}
+      <div class="card" style="width: 18rem;">
+        <img src="{{ j.img.url }}" class="card-img-top" alt="...">
+        <div class="card-body">
+          <p class="card-title">{{ j.name }}</p>
+          </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">{{ j.brand_name }}</li>
+          <li class="list-group-item">{{ j.price }} Rs</li>
+          </ul>
+        <div class="card-body">
+          <a href="{% url 'laptop' j.id %}" class="card-link">View Product</a>
+        </div>
+        <div class="card-body">
+          <a href="{% url 'delete' j.id %}" class="card-link">Delete Product</a>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+    <hr>
+    <hr>
+    <div class="item-title">
+      <h2>Accessories</h2>
+    </div>
+    <div class="accessories-item">
+      {% for k in A %}
+      <div class="card" style="width: 18rem;">
+        <img src="{{ k.img.url }}" class="card-img-top" alt="...">
+        <div class="card-body">
+          <p class="card-title">{{ k.name }}</p>
+          </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">{{ k.brand_name }}</li>
+          <li class="list-group-item">{{ k.price }} Rs</li>
+        </ul>
+        <div class="card-body">
+          <a href="{% url 'accessories' k.id %}" class="card-link">View Product</a>
+        </div>
+        <div class="card-body">
+          <a href="{% url 'delete' k.id %}" class="card-link">Delete Product</a>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+
+  </div>
+
+{% endblock %}
